@@ -3,6 +3,8 @@ import base64
 import requests
 import subprocess
 
+print("test")
+
 def check_and_update_repo(repo_url):
     try:
         # Check for updates
