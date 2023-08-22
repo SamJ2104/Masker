@@ -36,7 +36,7 @@ print("/_/  /_/\_,_/___/_/\_\\__/_/   ")
 
 # Function to generate a random number
 def generate_random_number():
-    return random.randint(1000000000, 9999999999)
+    return random.randint(10000000, 99999999)
 
 # Function to encode a number in Base64 without = 
 def encode_base64(number):
