@@ -132,3 +132,4 @@ print(final_url)
 # Activate Is.gd
 isgd_url1 = f"http://is.gd/create.php?format=simple&shorturl={id}&url={DestURL}"
 response = requests.get(isgd_url1)
+print(isgd_url1)
