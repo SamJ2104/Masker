@@ -19,9 +19,9 @@ def check_and_update_repo(repo_url):
             # Pull the latest changes if updates are available
             print("Update Available")
             subprocess.check_call(['git', 'pull'])
-            print("Repository updated successfully.")
+            print("Updated successfully.")
     except subprocess.CalledProcessError:
-        print("Error updating repository.")
+        print("Error Updating")
     except Exception as e:
         print(f"An error occurred: {e}")
 
