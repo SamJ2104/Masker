@@ -3,8 +3,7 @@ import base64
 import requests
 import subprocess
 
-print("test")
-
+print("Checking for Update…")
 def check_and_update_repo(repo_url):
     try:
         # Check for updates
@@ -18,6 +17,7 @@ def check_and_update_repo(repo_url):
             print("Up to date")
         else:
             # Pull the latest changes if updates are available
+            print("Update Available")
             subprocess.check_call(['git', 'pull'])
             print("Repository updated successfully.")
     except subprocess.CalledProcessError:
