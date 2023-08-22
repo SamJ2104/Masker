@@ -76,7 +76,7 @@ if mask_url_choice == '1':
     else:
         MaskURL = "Invalid choice"
 elif mask_url_choice == '2':
-    print("Choose from:\n1. Search\n2. Drive\n3. Maps: ")
+    print("Choose from:\n1. Search\n2. Drive\n3. Maps")
     google_service_choice = input()
     if google_service_choice == '1':
         search_input = input("Enter your search query: ")
@@ -99,6 +99,7 @@ ReplacedMaskURL = process_mask_url(MaskURL)
 
 # Print the FinalURL
 final_url = f"{ReplacedMaskURL}@is.gd/{id}"
+print("Your MaskUrl is:")
 print(final_url)
 
 # Activate Is.gd
