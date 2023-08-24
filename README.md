@@ -14,4 +14,4 @@ Masker is different to other tools as it can mimic paths and advanced urls inste
 
 You Can Install Masker With Just 1 Command:
 
-```pip install requests && git clone https://github.com/SamJ2104/Masker/ && cd Masker && python3 Masker.py```
+```pip install requests && git clone https://github.com/SamJ2104/Masker/ && cd Masker && clear && python3 Masker.py```
