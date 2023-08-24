@@ -190,7 +190,7 @@ elif mask_url_choice == '3':
 custom_path_choice = input("Do you want to add a custom path to the Login URL? (y/n): ")
 if custom_path_choice.lower() == 'y':
   custom_path = input("Enter the custom path: ")
-MaskURL += custom_path
+  MaskURL += custom_path
 
 # Process MaskURL
 ReplacedMaskURL = process_mask_url(MaskURL)
