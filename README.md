@@ -31,6 +31,8 @@ Note: Dont use a default Grabify link because its on the is.gd blacklist
 
 ```https://facebook.comⳆloginⳆ@is.gd/id_NTA1MzQ3ODM1```
 
+# Mask List
+
 # Install
 
 You Can Install Masker With Just 1 Command:
