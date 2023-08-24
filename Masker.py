@@ -38,7 +38,7 @@ print("   __  ___         __          ")
 print("  /  |/  /__ ____ / /_____ ____")
 print(" / /|_/ / _ `(_-</  '_/ -_) __/")
 print("/_/  /_/\_,_/___/_/\_\\__/_/   ")
-
+print("test")
 # Function to generate a random number
 def generate_random_number():
     return random.randint(10000000, 99999999)
