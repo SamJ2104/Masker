@@ -14,7 +14,7 @@ Masker is different to other tools as it can mimic paths and advanced urls inste
 1. Rickrolling: ```https://youtube.com/watch?v=dQw4w9WgXcQ``` > ```https://t.snapchat.comⳆaddⳆ@is.gd/id_841329199```
 
 2.Phishing:
-```https://bolivia-brought-requested-expressions.trycloudflare.com``` > ```https://facebook.comⳆloginⳆ@is.gd/id_NTA1MzQ3ODM1```
+```https://bolivia-bought-requested-expressions.trycloudflare.com``` > ```https://facebook.comⳆloginⳆ@is.gd/id_NTA1MzQ3ODM1```
 # Install
 
 You Can Install Masker With Just 1 Command:
