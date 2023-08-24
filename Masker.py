@@ -16,7 +16,7 @@ def check_and_update_repo(repo_url):
 
         # If the local repository is up to date, there's nothing to do
         if 'Your branch is up to date' in status_output:
-            print("Up to date.")
+            print("Up to date")
         else:
             # Pull the latest changes if updates are available
             subprocess.check_call(['git', 'pull'])
@@ -38,7 +38,6 @@ print("   __  ___         __          ")
 print("  /  |/  /__ ____ / /_____ ____")
 print(" / /|_/ / _ `(_-</  '_/ -_) __/")
 print("/_/  /_/\_,_/___/_/\_\\__/_/   ")
-print("test")
 # Function to generate a random number
 def generate_random_number():
     return random.randint(10000000, 99999999)
