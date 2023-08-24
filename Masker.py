@@ -2,31 +2,36 @@ import random
 import base64
 import requests
 import subprocess
+import os
+import sys
 
-print("Checking for Updates")
 def check_and_update_repo(repo_url):
     try:
-        # Check for updates
+        
+      
         subprocess.check_call(['git', 'fetch'])
 
-        # Check the status of the repo
+       
         status_output = subprocess.check_output(['git', 'status', '-uno']).decode('utf-8')
 
-        # If the repo is up to date, there's nothing to do
+        # If the local repository is up to date, there's nothing to do
         if 'Your branch is up to date' in status_output:
-            print("Up to date")
+            print("Up to date.")
         else:
             # Pull the latest changes if updates are available
-            print("Update Available")
             subprocess.check_call(['git', 'pull'])
-            print("Updated successfully.")
+            print("Updated successfully")
+            
+            # Restart the script
+            python = sys.executable
+            os.execl(python, python, *sys.argv)
     except subprocess.CalledProcessError:
-        print("Error Updating")
+        print("Error updating")
     except Exception as e:
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    repo_url = "https://github.com/SamJ2104/Masker"  # Replace with your repository URL
+    repo_url = "https://github.com/SamJ2104/Masker"  
     check_and_update_repo(repo_url)
 
 print("   __  ___         __          ")
