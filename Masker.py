@@ -3,7 +3,7 @@ import base64
 import requests
 import subprocess
 
-print("Checking for Update…")
+print("Checking for Updates")
 def check_and_update_repo(repo_url):
     try:
         # Check for updates
@@ -81,7 +81,7 @@ else:
     DestURL = "Invalid choice"
 
 # Ask for Mask URL
-mask_url_choice = input("Mask URL?\n1. Social Media\n2. Google Services\n3. Custom\n")
+mask_url_choice = input("Mask URL?\n1. Social Media\n2. Google Services\n3. Login Pages\n4. Custom\n")
 
 if mask_url_choice == '1':
     print("Choose from:\n1. TikTok Video\n2. TikTok Account\n3. Snapchat Account\n4. Snapchat Reel\n5. Youtube Video (Youtu.be)\n6. Youtube Video (Youtube.com)\n7. Youtube Short")
@@ -114,13 +114,47 @@ elif mask_url_choice == '2':
     elif google_service_choice == '3':
         id = generate_random_number()
         MaskURL = "https://maps.google.com/locationid="
-    else:
-        MaskURL = "Invalid choice"
-elif mask_url_choice == '3':
+elif mask_url_choice == '4':
     MaskURL = input("Enter Custom Mask URL: ")
-else:
-    MaskURL = "Invalid choice"
-
+elif mask_url_choice == '3':
+    print("Choose from:\n1. Microsoft\n2. Facebook\n3. Google\n4. Instagram\n5. Twitter\n6. Tiktok\n7. Roblox\n8. YouTube\n9. Reddit\n10. Spotify\n11. PayPal\n12. Discord\n13. Netflix\n14. Github\n15. iCloud\n16. Snapchat\n17. Amazon")
+    login_service_choice = input()
+    if login_service_choice == '1':
+        MaskURL = "https://login.microsoftonline.com/"
+    elif login_service_choice == '2':
+        MaskURL = "https://m.facebook.com/"
+    elif login_service_choice == '3':
+        MaskURL = "https://accounts.google.com/v3/signin/"
+    elif login_service_choice == '4':
+        MaskURL = "https://www.instagram.com/accounts/login/"
+    elif login_service_choice == '5':
+        MaskURL = "https://twitter.com/i/flow/login/"
+    elif login_service_choice == '6':
+        MaskURL = "https://www.tiktok.com/login/"
+    elif login_service_choice == '7':
+        MaskURL = "https://www.roblox.com/LOGIN/"
+    elif login_service_choice == '8':
+        MaskURL = "https://m.youtube.com/?login/"
+    elif login_service_choice == '9':
+        MaskURL = "https://www.reddit.com/login/?"
+    elif login_service_choice == '10':
+        MaskURL = "https://accounts.spotify.com/en/login/"
+    elif login_service_choice == '11':
+        MaskURL = "https://www.paypal.com/signin"
+    elif login_service_choice == '12':
+        MaskURL = "https://discord.com/login/"
+    elif login_service_choice == '13':
+        MaskURL = "https://www.netflix.com/login/"
+    elif login_service_choice == '14':
+        MaskURL = "https://github.com/login/"
+    elif login_service_choice == '15':
+        MaskURL = "https://www.icloud.com/login/"
+    elif login_service_choice == '16':
+        MaskURL = "https://accounts.snapchat.com/accounts/login/"
+    elif login_service_choice == '17':
+        MaskURL = "https://www.amazon.co.uk/signin/"
+    else:
+        print("Invalid choice")
 # Process MaskURL
 ReplacedMaskURL = process_mask_url(MaskURL)
 
