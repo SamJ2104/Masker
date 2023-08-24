@@ -16,7 +16,7 @@ def check_and_update_repo(repo_url):
 
         # If the local repository is up to date, there's nothing to do
         if 'Your branch is up to date' in status_output:
-            print("Up to date")
+            print("Up to date.")
         else:
             # Pull the latest changes if updates are available
             subprocess.check_call(['git', 'pull'])
@@ -34,10 +34,24 @@ if __name__ == "__main__":
     repo_url = "https://github.com/SamJ2104/Masker"  
     check_and_update_repo(repo_url)
 
-print("   __  ___         __          ")
-print("  /  |/  /__ ____ / /_____ ____")
-print(" / /|_/ / _ `(_-</  '_/ -_) __/")
-print("/_/  /_/\_,_/___/_/\_\\__/_/   ")
+ascii_art = """
+   __  ___         __          
+  /  |/  /__ ____ / /_____ ____
+ / /|_/ / _ `(_-</  '_/ -_) __/
+/_/  /_/\_,_/___/_/\_\\__/_/   
+"""
+
+print(ascii_art)
+
+# Clear function
+def clear():
+  
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        _ = os.system('cls')
+    print(ascii_art)
+
 # Function to generate a random number
 def generate_random_number():
     return random.randint(10000000, 99999999)
@@ -65,8 +79,12 @@ def process_mask_url(url):
 # Generate a random number and encode it as Base64
 id = encode_base64(generate_random_number())
 
+clear()
+
 # Ask for Destination URL
 dest_url_choice = input("Destination URL?\n1. Rickrolls\n2. Custom\n")
+
+clear()
 
 if dest_url_choice == '1':
     print("Choose from:\n1. Classic\n2. Yout-ube\n3. Autoplay")
@@ -80,12 +98,17 @@ if dest_url_choice == '1':
     else:
         DestURL = "Invalid choice"
 elif dest_url_choice == '2':
+    clear()
     DestURL = input("Enter Custom Destination URL: ")
 else:
     DestURL = "Invalid choice"
 
+clear()
+
 # Ask for Mask URL
 mask_url_choice = input("Mask URL?\n1. Social Media\n2. Google Services\n3. Login Pages\n4. Custom\n")
+
+clear()
 
 if mask_url_choice == '1':
     print("Choose from:\n1. TikTok Video\n2. TikTok Account\n3. Snapchat Account\n4. Snapchat Reel\n5. Youtube Video (Youtu.be)\n6. Youtube Video (Youtube.com)\n7. Youtube Short")
@@ -107,6 +130,8 @@ if mask_url_choice == '1':
     else:
         MaskURL = "Invalid choice"
 elif mask_url_choice == '2':
+    clear()
+  
     print("Choose from:\n1. Search\n2. Drive\n3. Maps")
     google_service_choice = input()
     if google_service_choice == '1':
@@ -121,6 +146,8 @@ elif mask_url_choice == '2':
 elif mask_url_choice == '4':
     MaskURL = input("Enter Custom Mask URL: ")
 elif mask_url_choice == '3':
+    clear()
+    id = generate_random_number()
     print("Choose from:\n1. Microsoft\n2. Facebook\n3. Google\n4. Instagram\n5. Twitter\n6. Tiktok\n7. Roblox\n8. YouTube\n9. Reddit\n10. Spotify\n11. PayPal\n12. Discord\n13. Netflix\n14. Github\n15. iCloud\n16. Snapchat\n17. Amazon")
     login_service_choice = input()
     if login_service_choice == '1':
