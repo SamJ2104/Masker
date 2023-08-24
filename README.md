@@ -17,6 +17,13 @@ Masker is different to other tools as it can mimic paths and advanced urls inste
 
 ```https://t.snapchat.comⳆaddⳆ@is.gd/id_841329199```
 
+2.Ip Grabbing
+Note: Dont use a default Grabify link because its on the is.gd blacklist
+
+```https://screenshot.best/MJNSFW``` (Grabify)
+
+```https://google.co.ukⳆsearchⳆq=@is.gd/How_to_tie_a_tie```
+
 3. Phishing:
 
 ```https://bolivia-bought-requested-expressions.trycloudflare.com```
