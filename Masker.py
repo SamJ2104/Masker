@@ -220,7 +220,7 @@ elif mask_url_choice == '3':
     else:
         print("Invalid choice")
 
-custom_path_choice = input("Do you want to add a custom path to the Login URL? (y/n): ")
+custom_path_choice = input("Do you want to add a custom path to the Mask URL? (y/n): ")
 if custom_path_choice.lower() == 'y':
     custom_path = input("Enter the custom path: ")
     MaskURL += custom_path
