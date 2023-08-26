@@ -6,6 +6,14 @@ You need the requests library for it to work
 You can install it with:
 ```pip install requests```
 
+# Table Of Contents
+- [Masker](#masker)
+- [Why Masker](#why-masker)
+- [Examples](#examples)
+- [Mask List](#mask-list)
+- [Install](#install)
+- [Other Installs](#other-installs)
+
 # Why Masker
 
 Masker is different to other tools as it can mimic paths and advanced urls instead of just domains
