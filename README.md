@@ -72,3 +72,9 @@ Amazon
 You Can Install Masker With Just 1 Command:
 
 ```pip install requests && git clone https://github.com/SamJ2104/Masker/ && cd Masker && clear && python3 Masker.py```
+
+# Other Installs
+
+[Web App (PWA)](https://masker-web.sam21jam.repl.co)
+
+[Siri Shortcut](https://is.gd/MaskerShortcut)
