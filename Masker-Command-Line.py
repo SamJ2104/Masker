@@ -79,7 +79,7 @@ clear()
 # Command Line
 
 if __name__ == "__main__":
-    if len(sys.argv) != 8:
+    if len(sys.argv) != 7:
        sys.exit(1)
 
 dest_url_choice = sys.argv[1]
