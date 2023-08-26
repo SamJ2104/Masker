@@ -101,6 +101,7 @@ def create_short_url(destination_url,MaskURL):
     if response.status_code == 200:
         shortened_url = response.json()["shortUrl"]
         MaskURL = MaskURL.replace("https://", "")
+        MaskURL = MaskURL.replace("/", "Ⳇ")
         shortened_url = shortened_url.replace("https://", "")  # Remove https://
         print(".Zip Mask:","https://" + MaskURL + "@" + shortened_url)
     else:
