@@ -204,9 +204,7 @@ elif mask_url_choice == '3':
     elif login_service_choice == '17':
         MaskURL = "https://www.amazon.co.uk/signin/"
     else:
-        
-
-    custom_path_choice = input("")
+        custom_path_choice = input("")
 if custom_path_choice.lower() == 'y':
     custom_path = input("Enter the custom path: ")
     MaskURL += custom_path
