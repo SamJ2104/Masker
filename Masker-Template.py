@@ -6,35 +6,6 @@ import os
 import sys
 import json
 
-def check_and_update_repo(repo_url):
-    try:
-        
-      
-        subprocess.check_call(['git', 'fetch'])
-
-       
-        status_output = subprocess.check_output(['git', 'status', '-uno']).decode('utf-8')
-
-        # If the local repository is up to date, there's nothing to do
-        if 'Your branch is up to date' in status_output:
-            print("Up to date.")
-        else:
-            # Pull the latest changes if updates are available
-            subprocess.check_call(['git', 'pull'])
-            print("Updated successfully")
-            
-            # Restart the script
-            python = sys.executable
-            os.execl(python, python, *sys.argv)
-    except subprocess.CalledProcessError:
-        print("Error updating")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-if __name__ == "__main__":
-    repo_url = "https://github.com/SamJ2104/Masker"  
-    check_and_update_repo(repo_url)
-
 
   
     
