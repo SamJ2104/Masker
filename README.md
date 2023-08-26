@@ -33,6 +33,11 @@ Note: Dont use a default Grabify link because its on the is.gd blacklist
 
 # Mask List
 
+# Masker.py vs Masker-Template.py
+
+Masker.py Clears After Every User Input and Masker-Template.py doesn't
+This is so you can use templates in your Terminal like ```cd Masker && python3 Masker-Template.py && 1 && 1 && 3 && 14 && y && download/file/``` for a Rickroll that looks like a Github Url
+
 # Install
 
 You Can Install Masker With Just 1 Command:
