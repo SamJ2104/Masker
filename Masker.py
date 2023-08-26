@@ -4,6 +4,7 @@ import requests
 import subprocess
 import os
 import sys
+import json
 
 def check_and_update_repo(repo_url):
     try:
@@ -75,6 +76,37 @@ def process_mask_url(url):
         return f"{scheme}://{path}"
     else:
         return url.replace("/", "Ⳇ")
+
+
+# Function to create a short URL
+def create_short_url(destination_url,MaskURL):
+    # URL and payload data
+    url = "https://www.url.zip/api/shortUrl"
+    payload = {"url": destination_url}
+
+    # Set headers
+    headers = {
+        "Host": "www.url.zip",
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    }
+
+    # Convert payload to JSON format
+    json_payload = json.dumps(payload)
+
+    # Send the POST request
+    response = requests.post(url, data=json_payload, headers=headers)
+
+    # Check the response
+    if response.status_code == 200:
+        shortened_url = response.json()["shortUrl"]
+        MaskURL = MaskURL.replace("https://", "")
+        shortened_url = shortened_url.replace("https://", "")  # Remove https://
+        print(".Zip Mask:","https://" + MaskURL + "@" + shortened_url)
+    else:
+        print("Error:", response.status_code, response.text)
+
+
 
 # Generate a random number and encode it as Base64
 id = encode_base64(generate_random_number())
@@ -189,17 +221,20 @@ elif mask_url_choice == '3':
 
 custom_path_choice = input("Do you want to add a custom path to the Login URL? (y/n): ")
 if custom_path_choice.lower() == 'y':
-  custom_path = input("Enter the custom path: ")
-  MaskURL += custom_path
+    custom_path = input("Enter the custom path: ")
+    MaskURL += custom_path
 
 # Process MaskURL
 ReplacedMaskURL = process_mask_url(MaskURL)
 
 # Print the FinalURL
 final_url = f"{ReplacedMaskURL}@is.gd/{id}"
-print("Your MaskUrl is:")
-print(final_url)
+print("Your MaskUrl's are:")
+print("Is.Gd Mask", final_url)
 
 # Activate Is.gd
 isgd_url1 = f"http://is.gd/create.php?format=simple&shorturl={id}&url={DestURL}"
 response = requests.get(isgd_url1)
+
+# Create a short URL using the custom API
+short_url = create_short_url(DestURL, MaskURL)
