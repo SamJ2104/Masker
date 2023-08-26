@@ -64,6 +64,19 @@ def create_short_url(destination_url,MaskURL):
     else:
         print("Error:", response.status_code, response.text)
 
+if __name__ == "__main__":
+    if len(sys.argv) != 8:
+        print("Usage: python3 Masker-Template.py <dest_url_choice> <rickroll_choice> <mask_url_choice> <mask_url_choice2> <custom_path_choice> <mask_url> <destination_url>")
+        sys.exit(1)
+
+    dest_url_choice = sys.argv[1]
+    rickroll_choice = sys.argv[2]
+    mask_url_choice = sys.argv[3]
+    login_service_choice = sys.argv[4]
+    custom_path_choice = sys.argv[5]
+    mask_url = sys.argv[6]
+    destination_url = sys.argv[7]
+
 
 
 # Generate a random number and encode it as Base64
