@@ -206,7 +206,7 @@ elif mask_url_choice == '3':
     else:
         
 
-custom_path_choice = input("")
+    custom_path_choice = input("")
 if custom_path_choice.lower() == 'y':
     custom_path = input("Enter the custom path: ")
     MaskURL += custom_path
