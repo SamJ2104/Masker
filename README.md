@@ -34,37 +34,37 @@ Note: Dont use a default Grabify link because its on the is.gd blacklist
 # Mask List
 Social Media:
 
-Tiktok Video
-Tiktok Account
-Snapchat Reel
-Youtube Video (Youtu.be)
-Youtube Video (Youtube.com)
+Tiktok Video,
+Tiktok Account,
+Snapchat Reel,
+Youtube Video (Youtu.be),
+Youtube Video (Youtube.com),
 Youtube Short
 
 Google Services:
 
-Search
-Drive
+Search,
+Drive,
 Maps
 
 Login Pages:
 
-Microsoft
-Facebook
-Google
-Instagram
-Twitter
-Tiktok
-Roblox
-Youtube
-Reddit
-Spotify
-PayPal
-Discord
-Netflix
-Github
-iCloud
-Snapchat
+Microsoft,
+Facebook,
+Google,
+Instagram,
+Twitter,
+Tiktok,
+Roblox,
+Youtube,
+Reddit,
+Spotify,
+PayPal,
+Discord,
+Netflix,
+Github,
+iCloud,
+Snapchat,
 Amazon
 
 # Install
