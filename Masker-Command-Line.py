@@ -77,6 +77,11 @@ id = encode_base64(generate_random_number())
 clear()
 
 # Command Line
+
+if __name__ == "__main__":
+    if len(sys.argv) != 8:
+       sys.exit(1)
+
 dest_url_choice = sys.argv[1]
 rickroll_choice = sys.argv[2]
 mask_url_choice = sys.argv[3]
