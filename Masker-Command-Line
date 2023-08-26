@@ -104,19 +104,19 @@ elif rickroll_choice == '3':
 if mask_url_choice == '1':
   if social_media_choice == '1':
         MaskURL = "https://vm.tiktok.com/account"
-    elif social_media_choice == '2':
+  elif social_media_choice == '2':
         MaskURL = "https://www.tiktok.com/"
-    elif social_media_choice == '3':
+  elif social_media_choice == '3':
         MaskURL = "https://t.snapchat.com/add/"
-    elif social_media_choice == '4':
+  elif social_media_choice == '4':
         MaskURL = "https://t.snapchat.com/reels/"
-    elif social_media_choice == '5':
+  elif social_media_choice == '5':
         MaskURL = "https://youtu.be/"
-    elif social_media_choice == '6':
+  elif social_media_choice == '6':
         MaskURL = "https://m.youtube.com/watch/v="
-    elif social_media_choice == '7':
+  elif social_media_choice == '7':
         MaskURL = "https://youtube.com/shorts/"
-    else:
+  else:
         MaskURL = "Invalid choice"
 elif mask_url_choice == '2':
   
