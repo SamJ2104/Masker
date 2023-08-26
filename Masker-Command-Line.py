@@ -7,12 +7,12 @@ import sys
 import json
 
 # Clear function
-def clear():
+# def clear():
   
-    if os.name == 'posix':
-        _ = os.system('clear')
-    else:
-        _ = os.system('cls')
+    # if os.name == 'posix':
+        # = os.system('clear')
+    # else:
+        # = os.system('cls')
     
 
 # Function to generate a random number
