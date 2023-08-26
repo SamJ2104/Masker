@@ -13,7 +13,7 @@ def clear():
         _ = os.system('clear')
     else:
         _ = os.system('cls')
-    print(ascii_art)
+    
 
 # Function to generate a random number
 def generate_random_number():
