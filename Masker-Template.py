@@ -35,14 +35,7 @@ if __name__ == "__main__":
     repo_url = "https://github.com/SamJ2104/Masker"  
     check_and_update_repo(repo_url)
 
-ascii_art = """
-   __  ___         __          
-  /  |/  /__ ____ / /_____ ____
- / /|_/ / _ `(_-</  '_/ -_) __/
-/_/  /_/\_,_/___/_/\_\\__/_/   
-"""
 
-print(ascii_art)
   
     
 
@@ -132,7 +125,7 @@ else:
 
 
 # Ask for Mask URL
-mask_url_choice = input("Mask URL?\n1. Social Media\n2. Google Services\n3. Login Pages\n4. Custom\n")
+mask_url_choice = input("")
 
 
 
@@ -158,7 +151,7 @@ if mask_url_choice == '1':
 elif mask_url_choice == '2':
     
   
-    print("Choose from:\n1. Search\n2. Drive\n3. Maps")
+    
     google_service_choice = input()
     if google_service_choice == '1':
         search_input = input("Enter your search query: ")
@@ -170,11 +163,11 @@ elif mask_url_choice == '2':
         id = generate_random_number()
         MaskURL = "https://maps.google.com/locationid="
 elif mask_url_choice == '4':
-    MaskURL = input("Enter Custom Mask URL: ")
+    MaskURL = input("")
 elif mask_url_choice == '3':
     
     id = generate_random_number()
-    print("Choose from:\n1. Microsoft\n2. Facebook\n3. Google\n4. Instagram\n5. Twitter\n6. Tiktok\n7. Roblox\n8. YouTube\n9. Reddit\n10. Spotify\n11. PayPal\n12. Discord\n13. Netflix\n14. Github\n15. iCloud\n16. Snapchat\n17. Amazon")
+    print("")
     login_service_choice = input()
     if login_service_choice == '1':
         MaskURL = "https://login.microsoftonline.com/"
@@ -211,9 +204,9 @@ elif mask_url_choice == '3':
     elif login_service_choice == '17':
         MaskURL = "https://www.amazon.co.uk/signin/"
     else:
-        print("Invalid choice")
+        
 
-custom_path_choice = input("Do you want to add a custom path to the Mask URL? (y/n): ")
+custom_path_choice = input("")
 if custom_path_choice.lower() == 'y':
     custom_path = input("Enter the custom path: ")
     MaskURL += custom_path
