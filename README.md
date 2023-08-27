@@ -6,6 +6,8 @@ You need the requests library for it to work
 You can install it with:
 ```pip install requests```
 
+NOTE: On some linux OS's the Slashes in the MaskUrl Look Like a blank Unicode Box, This is just for linux and cannot be fixed. When a url is shared from a linux machine to another device the Slashes will look normal
+
 # Table Of Contents
 - [Masker](#masker)
 - [Why Masker](#why-masker)
