@@ -107,7 +107,43 @@ def create_short_url(destination_url,MaskURL):
     else:
         print("Error:", response.status_code, response.text)
 
+# Function to create a short URL
+def create_short_url2(DestUrl,MaskURL):
+	url = "https://api.shrtco.de/v2/shorten"
+	headers = {
+    "Host": "api.shrtco.de",
+    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Referer": "https://shrtco.de/tools/custom",
+    "Content-Length": "38",
+    "Origin": "https://shrtco.de",
+    "Connection": "keep-alive",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "no-cors",
+    "Sec-Fetch-Site": "same-site",
+    "TE": "trailers",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Pragma": "no-cache",
+    "Cache-Control": "no-cache"
+}
 
+# Define the payload as raw data using the variables
+	payload = f"url={DestUrl}&custom_code={id}"
+
+# Send the POST request
+	response = requests.post(url, headers=headers, data=payload)
+	data = json.loads(response.text)
+# Check the response
+	if response.status_code == 201:
+        	shortened_url = data["result"]["full_short_link2"]
+        	MaskURL = MaskURL.replace("https://", "")
+        	MaskURL = MaskURL.replace("/", "Ⳇ")
+        	shortened_url = shortened_url.replace("https://", "")  # Remove https://
+        	print("No Blacklist Mask:","https://" + MaskURL + "@" + shortened_url)
+	else:
+        	print("Error:", response.status_code, response.text)
 
 # Generate a random number and encode it as Base64
 id = encode_base64(generate_random_number())
@@ -239,3 +275,4 @@ response = requests.get(isgd_url1)
 
 # Create a short URL using the custom API
 short_url = create_short_url(DestURL, MaskURL)
+short_url2 = create_short_url2(DestURL, MaskURL)
