@@ -95,6 +95,6 @@ You Can Install Masker With Just 1 Command:
   <a href="https://shell.cloud.google.com/?cloudshell_git_repo=https://github.com/SamJ2104/Masker.git&show=terminal" target="_blank"><img src="https://gstatic.com/cloudssh/images/open-btn.svg"></a>
 </p>
 
-[Web App (PWA)](https://masker-web.sam21jam.repl.co)
+[Web](https://masker.samj.app)
 
 [Siri Shortcut](https://is.gd/MaskerShortcut)
