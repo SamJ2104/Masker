@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta name="google-site-verification" content="n2wTmSCgd95nr_hpLrMiz2rHST-Udd4e4J87hlolhq0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+</head>
+<body>
+    <div>
+        <h1>Masker</h1>
+        <label for="destination-url">Destination URL</label>
+        <input type="text" id="destination-url"><br><br>
+
+        <label for="mask-url-menu">Shortener</label>
+        <select id="mask-url-menu">
+            <optgroup label="URL Shorteners">
+                <option value="da.gd">da.gd</option>
+                <option value="is.gd">is.gd</option>
+              <option value="9qr.de">9qr.de (No Blacklist)</option>
+            </optgroup>
+        </select><br><br>
+
+        <label for="mask-sevice-menu">Mask URL</label>
+        <select id="mask-service-menu">
+            <optgroup label="Social Media">
+                <option value="https://vm.tiktok.com/">TikTok Video</option>
+                <option value="https://tiktok.com/account">TikTok Account</option>
+                <option value="https://t.snapchat.com/add/">Snapchat Account</option>
+                <option value="https://t.snapchat.com/reels/">Snapchat Reel</option>
+                <option value="https://youtu.be/">Youtube Video (Youtu.be)</option>
+                <option value="https://m.youtube.com/watch/v=">Youtube Video (Youtube.com)</option>
+                <option value="https://youtube.com/shorts/">Youtube Short</option>
+            </optgroup>
+            <optgroup label="Google Services">
+                <option value="https://www.google.co.uk/search?q=">Search</option>
+                <option value="https://drive.google.com/file/d/">Drive</option>
+                <option value="https://maps.google.com/locationid/">Maps</option>
+            </optgroup>
+            <optgroup label="Login Pages">
+                <option value="https://login.microsoftonline.com/">Microsoft</option>
+                <option value="https://m.facebook.com/">Facebook</option>
+                <option value="https://accounts.google.com/v3/signin/">Google</option>
+                <option value="https://www.instagram.com/accounts/login/">Instagram</option>
+                <option value="https://twitter.com/i/flow/login/">Twitter</option>
+                <option value="https://www.tiktok.com/login/">Tiktok</option>
+                <option value="https://www.roblox.com/LOGIN/">Roblox</option>
+                <option value="https://m.youtube.com/?login/">YouTube</option>
+                <option value="https://www.reddit.com/login/">Reddit</option>
+                <option value="https://accounts.spotify.com/en/login/">Spotify</option>
+                <option value="https://www.paypal.com/signin/">PayPal</option>
+                <option value="https://discord.com/login/">Discord</option>
+                <option value="https://www.netflix.com/login/">Netflix</option>
+                <option value="https://github.com/login/">Github</option>
+                <option value="https://www.icloud.com/login/">iCloud</option>
+                <option value="https://accounts.snapchat.com/accounts/login/">Snapchat</option>
+                <option value="https://www.amazon.co.uk/signin/">Amazon</option>
+            </optgroup>
+        </select><br><br>
+
+        <label for="id-type-menu">ID Type</label>
+        <select id="id-type-menu">
+            <option value="b64">Base64 ID</option>
+            <option value="number">Number ID</option>
+        </select><br><br>
+
+        <button id="generate-url-button">Generate Masked URL</button><br><br>
+
+        <p id="masked-url"></p>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const destinationUrlInput = document.getElementById("destination-url");
+            const maskUrlMenu = document.getElementById("mask-url-menu");
+            const maskServiceMenu = document.getElementById("mask-service-menu");
+            const idTypeMenu = document.getElementById("id-type-menu");
+            const generateUrlButton = document.getElementById("generate-url-button");
+            const maskedUrlOutput = document.getElementById("masked-url");
+
+            generateUrlButton.addEventListener("click", function () {
+                const destinationUrl = destinationUrlInput.value;
+                const selectedMaskUrl = maskUrlMenu.value;
+                const selectedMaskService = maskServiceMenu.value;
+                const selectedIdType = idTypeMenu.value;
+
+                let id = "";
+
+                if (selectedIdType === "b64") {
+                    // Generate a random number and encode it as Base64
+                    const randomNumber = Math.floor(Math.random() * 90000000) + 10000000;
+                    id = btoa(randomNumber.toString()).replace(/=/g, "");
+                }
+                else if (selectedIdType === "number") {
+                    // Generate a random number
+                    id = Math.floor(Math.random() * 90000000) + 10000000;
+                }
+
+// Convert id to a string and truncate it to a maximum of 10 characters
+    id = String(id).slice(0, 10);
+              
+              // Remove "https://" and replace "/" with "Ⳇ"
+              const cleanedMaskedUrl = selectedMaskService.replace("https://", "").replace(/\//g, "Ⳇ");
+
+              const maskedUrl = `${cleanedMaskedUrl}@${selectedMaskUrl}/${id}`;
+ 
+                // Determine the activation URL based on user's choice
+                let activationUrl = "";
+                if (selectedMaskUrl === "is.gd") {
+                    activationUrl = `http://is.gd/create.php?format=simple&shorturl=${id}&url=${destinationUrl}`;
+                } else if (selectedMaskUrl === "da.gd") {
+                    activationUrl = `https://da.gd/?url=${destinationUrl}&shorturl=${id}`;
+                }
+
+else if (selectedMaskUrl === "9qr.de") {
+                    activationUrl = `https://api.shrtco.de/v2/shorten?url=${destinationUrl}&custom_code=${id}}`;
+                }
+              
+                // Display the masked URL and link to the activation URL
+                maskedUrlOutput.innerHTML = `Masked URL:<br>https://${maskedUrl} <br> <a href="${activationUrl}" target="_blank" id="activate-link">Activate</a>`;
+                
+                // Hide the Activate hyperlink after being clicked
+                const activateLink = document.getElementById("activate-link");
+                activateLink.addEventListener("click", function () {
+                    activateLink.style.display = "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

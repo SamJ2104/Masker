@@ -1,0 +1,115 @@
+/* Apply a black background */
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Mono', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+/* Style the title */
+h1 {
+    font-size: 36px;
+    color: white; /* Keep the title white */
+}
+
+/* Style the labels for the menu */
+label {
+    color: #adadad; /* Set the label color to grey */
+}
+/* Center the content in the middle of the page */
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Increase the font size for the title */
+h1 {
+    font-size: 36px;
+}
+
+/* Style the Destination URL input box */
+#destination-url {
+    appearance: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    width: 80%; /* Make the Destination URL box wider */
+}
+
+/* Style the "Masked URL" section */
+#masked-url {
+    font-size: 20px; /* Reduce the font size */
+    margin-top: 20px;
+    max-width: 100%; /* Limit the width to 90% of the viewport width */
+    word-wrap: break-word; /* Wrap long URLs if needed */
+}
+
+/* Style the menu buttons, including text color */
+select {
+    appearance: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    color: #858585; /* Add this line to set text color to black */
+}
+
+/* Style the Generate Masked URL button */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    color: #858585;
+}
+
+/* Hide the Generate Masked URL button after being clicked */
+button.clicked {
+    display: none;
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 768px) {
+    h1, select, button, p {
+        font-size: 24px;
+    }
+}
+
+/* Style the menu buttons and select elements with Roboto Mono font */
+select, button {
+    font-family: 'Roboto Mono', monospace;
+    /* Other styling properties here */
+}
+
+/* Style the Masker menu */
+#mask-url-menu {
+    appearance: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    max-width: 100%;
+    width: auto; /* This will keep the menu width to the content size */
+}
+
+/* Set the Destination URL input font color to #858585 */
+#destination-url {
+    font-family: 'Roboto Mono', monospace;
+    color: #858585;
+}
